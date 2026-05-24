@@ -10,7 +10,7 @@ Repositório consolidado da entrega do projeto CompStat Rio desenvolvido no Clau
   - Caio Siqueira
   - Eduardo Zacour
   - Paulo Vítor Libório
-  - Radhanama Messiano
+  - Radhanama Mesiano
 
 ## Links
 
@@ -23,6 +23,18 @@ Repositório consolidado da entrega do projeto CompStat Rio desenvolvido no Clau
 O projeto entrega uma plataforma CompStat para apoiar análise territorial, preparação de reuniões e tomada de decisão em segurança urbana no Rio de Janeiro. A solução combina um frontend Vite/React com mapa interativo, um backend Python/FastAPI, armazenamento relacional no Supabase/Postgres e integrações de IA para assistência analítica.
 
 O objetivo operacional é permitir que uma equipe selecione áreas da Força Municipal, visualize evidências georreferenciadas, consulte um assistente contextualizado por dados, gere insumos de relatório e organize reuniões CompStat com anexos, metas, decisões e ações.
+
+## Screenshots
+
+<img width="1538" height="912" alt="Screenshot 2026-05-24 at 15 50 02" src="https://github.com/user-attachments/assets/78860548-6f8a-460d-85ee-2fb5665739ed" />
+<img width="1538" height="912" alt="Screenshot 2026-05-24 at 15 50 25" src="https://github.com/user-attachments/assets/d04d1710-2653-46dd-a56c-9d630d4cffc9" />
+<img width="1538" height="912" alt="Screenshot 2026-05-24 at 15 50 38" src="https://github.com/user-attachments/assets/43f1d5da-1da5-49c5-8c26-e474f8fb3a14" />
+<img width="1538" height="912" alt="Screenshot 2026-05-24 at 15 50 48" src="https://github.com/user-attachments/assets/586dd59b-8ad1-46b6-a2d3-91420a52106c" />
+<img width="1538" height="912" alt="Screenshot 2026-05-24 at 15 51 02" src="https://github.com/user-attachments/assets/462fd5ec-0135-4e85-aa6c-39edcb7c9b1a" />
+<img width="1538" height="912" alt="Screenshot 2026-05-24 at 15 51 08" src="https://github.com/user-attachments/assets/fcaa60f9-3d40-4d06-b5c3-6e30b4217093" />
+<img width="1538" height="912" alt="Screenshot 2026-05-24 at 15 51 17" src="https://github.com/user-attachments/assets/569fe620-89b3-4584-9341-cfa93c40908a" />
+<img width="1538" height="912" alt="Screenshot 2026-05-24 at 15 51 25" src="https://github.com/user-attachments/assets/7c155702-bc8e-4e64-b3f7-b83f4a0653b9" />
+
 
 ## Estrutura
 
