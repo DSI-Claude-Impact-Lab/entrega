@@ -1,0 +1,15 @@
+[Unit]
+Description=Claude Impact Lab Python Backend
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/claude-impact-lab/apps/python-backend/current
+EnvironmentFile=/opt/claude-impact-lab/apps/python-backend/.env
+ExecStart=/root/.local/bin/uv run uvicorn app.config.main:app --host 127.0.0.1 --port 8000
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
+

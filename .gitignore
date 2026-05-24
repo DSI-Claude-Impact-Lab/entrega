@@ -1,0 +1,28 @@
+.DS_Store
+
+# Secrets and local runtime configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Node/Vite
+node_modules/
+dist/
+.vite/
+
+# Local logs and editor state
+*.log
+.idea/
+.vscode/

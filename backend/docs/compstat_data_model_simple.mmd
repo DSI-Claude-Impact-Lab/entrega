@@ -1,0 +1,158 @@
+erDiagram
+    AREA_FM {
+        uuid id PK
+        text nome
+        geography geometria
+    }
+
+    OCORRENCIA_CRIMINAL {
+        text id_hash PK
+        uuid area_id FK
+        int ano
+        int mes
+        enum tipo_crime
+        date data_fato
+        int hora_fato
+        geography geometria
+    }
+
+    DENUNCIA_DISQUE {
+        uuid id PK
+        uuid area_id FK
+        text id_denuncia_origem
+        timestamptz data_denuncia
+        text tipo_denuncia
+        text relato_redigido
+        geography geometria
+    }
+
+    RELINT {
+        uuid id PK
+        uuid area_id FK
+        text arquivo_origem
+        text texto_extraido
+    }
+
+    FATOR_URBANO {
+        bigint id PK
+        uuid area_id FK
+        enum tipo_facilitador
+        enum orgao_responsavel
+        text tipo_ocorrencia
+        geography geometria
+    }
+
+    CAMERA {
+        uuid id PK
+        uuid area_id FK
+        text id_trecho
+        geography geometria
+    }
+
+    DOMINIO_TERRITORIAL {
+        uuid id PK
+        enum grupo_dominio
+        text nome_territorio
+        geography geometria
+    }
+
+    CENSO_PSR {
+        text chave_origem PK
+        uuid area_id FK
+        int ano_censo
+        geography geometria
+    }
+
+    FONTE_INTELIGENCIA {
+        uuid id PK
+        uuid area_id FK
+        enum tipo_fonte
+        text id_registro_origem
+        text texto_narrativo
+    }
+
+    EXTRACAO_DINAMICA_CRIMINAL {
+        uuid id PK
+        uuid fonte_id FK
+        uuid area_id FK
+        text resumo
+        enum confianca
+    }
+
+    EVENTO_CRIMINAL {
+        uuid id PK
+        uuid extracao_id FK
+        uuid area_id FK
+        enum tipo_crime
+        enum modo_deslocamento
+        enum periodo_dia
+        text modus_operandi
+    }
+
+    ROTA_FUGA {
+        uuid id PK
+        uuid extracao_id FK
+        uuid area_id FK
+        text caminho
+        text destino
+        enum modo_deslocamento
+    }
+
+    FACILITADOR {
+        uuid id PK
+        uuid extracao_id FK
+        bigint fator_urbano_id FK
+        uuid area_id FK
+        enum tipo_facilitador
+        enum orgao_responsavel
+        text descricao
+    }
+
+    PONTO_RECEPTACAO {
+        uuid id PK
+        uuid extracao_id FK
+        uuid area_id FK
+        text local
+    }
+
+    SINAL_RISCO_AREA {
+        uuid id PK
+        uuid area_id FK
+        enum fonte_sinal
+        text tipo_sinal
+        decimal pontuacao
+    }
+
+    RECOMENDACAO_ACAO {
+        uuid id PK
+        uuid area_id FK
+        uuid sinal_risco_id FK
+        enum orgao_responsavel
+        text acao
+        text status
+    }
+
+    AREA_FM ||--o{ OCORRENCIA_CRIMINAL : contem
+    AREA_FM ||--o{ DENUNCIA_DISQUE : recebe
+    AREA_FM ||--o{ RELINT : possui
+    AREA_FM ||--o{ FATOR_URBANO : mapeia
+    AREA_FM ||--o{ CAMERA : cobre
+    AREA_FM ||--o{ CENSO_PSR : cruza_com
+    AREA_FM ||--o{ FONTE_INTELIGENCIA : contextualiza
+    AREA_FM ||--o{ SINAL_RISCO_AREA : gera
+    AREA_FM ||--o{ RECOMENDACAO_ACAO : recebe
+
+    DENUNCIA_DISQUE ||--o{ FONTE_INTELIGENCIA : alimenta
+    RELINT ||--o{ FONTE_INTELIGENCIA : alimenta
+    FONTE_INTELIGENCIA ||--o{ EXTRACAO_DINAMICA_CRIMINAL : vira_extracao
+
+    EXTRACAO_DINAMICA_CRIMINAL ||--o{ EVENTO_CRIMINAL : identifica
+    EXTRACAO_DINAMICA_CRIMINAL ||--o{ ROTA_FUGA : identifica
+    EXTRACAO_DINAMICA_CRIMINAL ||--o{ FACILITADOR : identifica
+    EXTRACAO_DINAMICA_CRIMINAL ||--o{ PONTO_RECEPTACAO : identifica
+
+    FATOR_URBANO ||--o{ FACILITADOR : confirma
+    OCORRENCIA_CRIMINAL ||--o{ SINAL_RISCO_AREA : sustenta
+    ROTA_FUGA ||--o{ SINAL_RISCO_AREA : sustenta
+    FACILITADOR ||--o{ SINAL_RISCO_AREA : sustenta
+    SINAL_RISCO_AREA ||--o{ RECOMENDACAO_ACAO : justifica

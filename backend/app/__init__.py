@@ -1,0 +1,2 @@
+"""Claude Impact Lab backend."""
+

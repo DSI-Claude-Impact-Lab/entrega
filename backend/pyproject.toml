@@ -1,0 +1,34 @@
+[project]
+name = "dsi-compstat-rio-backend"
+version = "0.1.0"
+description = "FastAPI backend for the DSI CompStat Rio Claude Impact Lab project"
+requires-python = ">=3.12"
+dependencies = [
+    "anthropic>=0.75.0",
+    "fastapi>=0.115.0",
+    "google-cloud-bigquery>=3.41.0",
+    "httpx>=0.27.0",
+    "openpyxl>=3.1.0",
+    "pandas>=2.2.0",
+    "psycopg[binary]>=3.2.0",
+    "pydantic-settings>=2.6.0",
+    "supabase>=2.9.0",
+    "uvicorn[standard]>=0.30.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.0",
+    "ruff>=0.8.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["B008"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
