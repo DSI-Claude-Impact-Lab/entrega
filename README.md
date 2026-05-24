@@ -4,7 +4,7 @@ Repositório consolidado da entrega do projeto CompStat Rio desenvolvido no Clau
 
 ## Equipe
 
-- **Nome da equipe:** DSI PUC-Rio
+- **Nome da equipe:** DSI PUC-Rio - Equipe 1
 - **Tema:** Segurança
 - **Membros:**
   - Caio Siqueira
