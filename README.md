@@ -174,6 +174,14 @@ Build de produção:
 npm run build
 ```
 
+## Autenticação
+
+A camada de autenticação foi implementada no backend e no frontend (login, sessão e proteção das rotas sensíveis da API), mas foi **desabilitada na versão de demonstração** publicada em `https://claude-impact-lab.gtec-dsi.net/` para facilitar a avaliação da banca e dos parceiros sem necessidade de credenciais. Em ambiente produtivo basta reativar o middleware de autenticação e o guard de rotas — o esquema permanece presente no código.
+
+## Relatórios
+
+O relatório por área da Força Municipal (`GET /api/geo/areas-fm/{area_id}/report` + exportação `.docx` no frontend em `frontend/src/lib/areaReportDocx.ts`) segue o **template definido nas regras do CompStat**: estrutura de seções, métricas de risco, evidências georreferenciadas, recomendações operacionais e formato de apresentação obedecem ao padrão CompStat fornecido como referência pelo programa, de modo que o documento gerado pela aplicação possa ser usado diretamente como insumo nas reuniões.
+
 ## Dados e IA
 
 A solução usa Supabase/Postgres para persistência e consulta dos dados estruturados. O backend contém migrações SQL e scripts de ETL para organizar as bases em tabelas consultáveis pela API.
